@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <DynamicHeader></DynamicHeader>
     <h1>{{ msg }}</h1>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
@@ -31,12 +32,15 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
+const components = {
+    DynamicHeader: ()=>import('./DynamicHeader.vue')
+};
 export default Vue.extend({
   name: 'HelloWorld',
   props: {
     msg: String,
   },
+  components
 });
 </script>
 
